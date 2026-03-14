@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0b0b10;
+    color: #e2e2f0;
+    font-family: 'Syne', sans-serif;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #13131c; }
+  ::-webkit-scrollbar-thumb { background: #2a2a3d; border-radius: 4px; }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-xl p-5;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-accent/80 text-white font-semibold px-4 py-2 rounded-lg transition-all text-sm;
+  }
+
+  .btn-ghost {
+    @apply bg-surface2 hover:bg-border text-gray-300 font-medium px-4 py-2 rounded-lg transition-all text-sm border border-border;
+  }
+
+  .btn-danger {
+    @apply bg-red/10 hover:bg-red/20 text-red border border-red/30 font-medium px-3 py-1.5 rounded-lg transition-all text-sm;
+  }
+
+  .input {
+    @apply w-full bg-surface2 border border-border rounded-lg px-3 py-2 text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:border-accent/60 transition-colors;
+  }
+
+  .badge-green  { @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono bg-green/10 text-green border border-green/20; }
+  .badge-yellow { @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono bg-yellow/10 text-yellow border border-yellow/20; }
+  .badge-red    { @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono bg-red/10 text-red border border-red/20; }
+  .badge-purple { @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-mono bg-accent/10 text-accent border border-accent/20; }
+}
