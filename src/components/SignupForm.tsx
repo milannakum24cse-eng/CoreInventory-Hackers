@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
-import { signup, SignupData } from '../services/auth';
+import { signupViaBackend, SignupRequest } from '../services/backend';
 import { UserPlus, Mail, Lock, User, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface FormData {
@@ -85,13 +85,13 @@ export default function SignupForm() {
 
     setIsLoading(true);
 
-    const signupData: SignupData = {
+    const signupData: SignupRequest = {
       loginId: formData.loginId,
       email: formData.email,
       password: formData.password,
     };
 
-    const response = await signup(signupData);
+    const response = await signupViaBackend(signupData);
 
     setIsLoading(false);
 
